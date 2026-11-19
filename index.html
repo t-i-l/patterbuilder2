@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Pattern Builder</title>
+  <link rel="preload" href="fonts/GT-Walsheim-ARAG-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="workspace">
+    <div class="canvas-area">
+      <div class="canvas-wrapper">
+        <div class="paper-give" id="paperGive">
+          <div class="paper" id="paper">
+            <svg id="patternCanvas" xmlns="http://www.w3.org/2000/svg">
+              <g id="blockLayer"></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="toolbar">
+      <div class="toolbar-left"></div>
+
+      <div class="tools">
+        <button class="tile tile--default" data-type="default" aria-label="Baustein: Gelbe Pille auf Blush" title="Ziehen zum Platzieren"><span class="tile-pill"></span></button>
+        <button class="tile tile--inverted" data-type="inverted" aria-label="Baustein: Blush Pille auf Gelb" title="Ziehen zum Platzieren"><span class="tile-pill"></span></button>
+        <button class="tile tile--white" data-type="white" aria-label="Baustein: Weiße Fläche" title="Ziehen zum Platzieren"></button>
+
+        <span class="divider" aria-hidden="true"></span>
+
+        <label class="field">
+          <span class="field-label">W</span>
+          <input type="text" inputmode="numeric" id="canvasWidth" value="1200" aria-label="Breite in Pixel" autocomplete="off">
+        </label>
+        <label class="field">
+          <span class="field-label">H</span>
+          <input type="text" inputmode="numeric" id="canvasHeight" value="800" aria-label="Höhe in Pixel" autocomplete="off">
+        </label>
+
+        <span class="divider" aria-hidden="true"></span>
+
+        <div class="select">
+          <select id="gridCount" aria-label="Grid-Anzahl">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+          </select>
+          <svg class="select-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7L7.2 9.93334C7.6 10.4667 8.4 10.4667 8.8 9.93334L11 7.00001" fill="none" stroke="#000"/></svg>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="btn" id="randomBtn">Random</button>
+        <button class="btn" id="exportBtn">Export</button>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
